@@ -597,6 +597,10 @@ canvas {
   font-size: 26px;
   font-weight: bold;
   backdrop-filter: blur(4px);
+
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 #boostBtn {

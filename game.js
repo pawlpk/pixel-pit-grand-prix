@@ -159,10 +159,16 @@ function bindTouch(buttonId, key) {
     keys.delete(key);
   };
 
-  btn.addEventListener("touchstart", press);
+  btn.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  press(e);
+}, { passive: false });
   btn.addEventListener("mousedown", press);
 
-  btn.addEventListener("touchend", release);
+  btn.addEventListener("touchend", (e) => {
+  e.preventDefault();
+  release(e);
+}, { passive: false });
   btn.addEventListener("mouseup", release);
 
   btn.addEventListener("touchcancel", release);
