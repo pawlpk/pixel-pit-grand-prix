@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pixel Pit Grand Prix</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div>
+          <p class="eyebrow">Cockpit Pixel Series</p>
+          <h1>Pixel Pit Grand Prix</h1>
+        </div>
+        <div class="top-badges" aria-hidden="true">
+          <span>W</span>
+          <span>A</span>
+          <span>S</span>
+          <span>D</span>
+          <span>SHIFT</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="screen is-active" id="menuScreen" aria-label="Garaj">
+          <div class="selection-layout">
+            <section class="panel">
+              <div class="panel-heading">
+                <p class="eyebrow">Takim</p>
+                <h2>Garaj</h2>
+              </div>
+              <div class="team-grid" id="teamGrid"></div>
+            </section>
+
+            <section class="panel garage-panel">
+              <div class="panel-heading">
+                <p class="eyebrow">Surucu</p>
+                <h2 id="garageTeamName">Lerari</h2>
+              </div>
+
+              <div class="garage-preview">
+                <div class="livery-preview" id="liveryPreview" aria-hidden="true"></div>
+                <div class="garage-stats" id="garageStats"></div>
+              </div>
+
+              <div class="driver-grid" id="driverGrid"></div>
+
+              <div class="race-options">
+                <label>
+                  <span>Tur</span>
+                  <select id="lapSelect" aria-label="Tur sayisi">
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="5">5</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Tempo</span>
+                  <select id="paceSelect" aria-label="Rakip temposu">
+                    <option value="rookie">Rahat</option>
+                    <option value="club" selected>Klasik</option>
+                    <option value="pro">Zorlu</option>
+                  </select>
+                </label>
+                <button class="primary-button" id="startButton" type="button">Yarisa Basla</button>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="screen game-screen" id="gameScreen" aria-label="Yaris">
+          <div class="canvas-wrap">
+            <canvas id="gameCanvas" width="426" height="240" tabindex="0" aria-label="Pixel kokpit yarisi"></canvas>
+            <div class="pause-banner" id="pauseBanner">DURAKLATILDI</div>
+          </div>
+          <div class="game-actions">
+            <button class="ghost-button" id="pauseButton" type="button" aria-label="Duraklat">II</button>
+            <button class="ghost-button" id="garageButton" type="button">Garaj</button>
+          </div>
+        </section>
+
+        <section class="screen" id="resultScreen" aria-label="Sonuc">
+          <div class="result-layout">
+            <section class="panel result-panel">
+              <div class="panel-heading">
+                <p class="eyebrow">Klasman</p>
+                <h2 id="resultTitle">Damalilar</h2>
+              </div>
+              <ol class="standings" id="standingsList"></ol>
+              <div class="result-actions">
+                <button class="primary-button" id="restartButton" type="button">Tekrar Yaris</button>
+                <button class="ghost-button" id="backButton" type="button">Garaja Don</button>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
