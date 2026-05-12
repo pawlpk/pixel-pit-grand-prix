@@ -575,3 +575,40 @@ canvas {
     grid-column: 2;
   }
 }
+.mobile-controls {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  gap: 14px;
+  z-index: 999;
+}
+
+.mobile-controls button,
+#boostBtn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #39424e;
+  background: rgba(15,15,15,0.82);
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  backdrop-filter: blur(4px);
+}
+
+#boostBtn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 90px;
+  height: 90px;
+  color: #f2c14e;
+}
+
+@media (min-width: 900px) {
+  .mobile-controls,
+  #boostBtn {
+    display: none;
+  }
+}
