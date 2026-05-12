@@ -1307,5 +1307,9 @@ ui.pauseButton.addEventListener("click", () => {
 });
 
 renderMenu();
+bindTouch("leftBtn", "ArrowLeft");
+bindTouch("rightBtn", "ArrowRight");
+bindTouch("brakeBtn", "ArrowDown");
+bindTouch("boostBtn", "ShiftLeft");
 drawAttract();
 ensureLoop();
