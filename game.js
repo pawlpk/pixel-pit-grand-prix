@@ -146,6 +146,7 @@ const CONTROL_KEYS = [
   "ShiftRight",
   "Space"
 ];
+<<<<<<< HEAD
 function bindTouch(buttonId, key) {
   const btn = document.getElementById(buttonId);
 
@@ -163,6 +164,9 @@ function bindTouch(buttonId, key) {
   btn.addEventListener("touchend", release);
   btn.addEventListener("touchcancel", release);
 }
+=======
+
+>>>>>>> 260f9ea3d88632730ef9bd37eb4c728712d5ecbd
 const CAMERA = {
   horizon: 54,
   nearDepth: 22,
@@ -471,7 +475,12 @@ function updatePlayer(dt) {
   const player = game.player;
   const stats = selectedTeam.stats;
   const paceGate = game.countdown <= 0;
+<<<<<<< HEAD
   const accelKey = true;
+=======
+  const accelKey = keys.has("KeyW") || keys.has("ArrowUp");
+  const brakeKey = keys.has("KeyS") || keys.has("ArrowDown");
+>>>>>>> 260f9ea3d88632730ef9bd37eb4c728712d5ecbd
   const leftKey = keys.has("KeyA") || keys.has("ArrowLeft");
   const rightKey = keys.has("KeyD") || keys.has("ArrowRight");
   const shiftKey = keys.has("ShiftLeft") || keys.has("ShiftRight");
@@ -1298,7 +1307,10 @@ ui.pauseButton.addEventListener("click", () => {
 renderMenu();
 drawAttract();
 ensureLoop();
+<<<<<<< HEAD
 bindTouch("leftBtn", "ArrowLeft");
 bindTouch("rightBtn", "ArrowRight");
 bindTouch("brakeBtn", "ArrowDown");
 bindTouch("boostBtn", "ShiftLeft");
+=======
+>>>>>>> 260f9ea3d88632730ef9bd37eb4c728712d5ecbd
