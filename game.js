@@ -455,7 +455,8 @@ function updatePlayer(dt) {
   const player = game.player;
   const stats = selectedTeam.stats;
   const paceGate = game.countdown <= 0;
-
+  const accelKey = true;
+  const brakeKey = keys.has("KeyS") || keys.has("ArrowDown");
   const leftKey = keys.has("KeyA") || keys.has("ArrowLeft");
   const rightKey = keys.has("KeyD") || keys.has("ArrowRight");
   const shiftKey = keys.has("ShiftLeft") || keys.has("ShiftRight");
@@ -1282,4 +1283,3 @@ ui.pauseButton.addEventListener("click", () => {
 renderMenu();
 drawAttract();
 ensureLoop();
-
