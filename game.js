@@ -146,7 +146,27 @@ const CONTROL_KEYS = [
   "ShiftRight",
   "Space"
 ];
+function bindTouch(buttonId, key) {
+  const btn = document.getElementById(buttonId);
 
+  const press = (e) => {
+    e.preventDefault();
+    keys.add(key);
+  };
+
+  const release = (e) => {
+    e.preventDefault();
+    keys.delete(key);
+  };
+
+  btn.addEventListener("touchstart", press);
+  btn.addEventListener("mousedown", press);
+
+  btn.addEventListener("touchend", release);
+  btn.addEventListener("mouseup", release);
+
+  btn.addEventListener("touchcancel", release);
+}
 const CAMERA = {
   horizon: 54,
   nearDepth: 22,

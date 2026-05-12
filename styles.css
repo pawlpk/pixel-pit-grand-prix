@@ -463,6 +463,7 @@ canvas {
   aspect-ratio: 16 / 9;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  touch-action: none;
 }
 
 .pause-banner {
@@ -582,6 +583,7 @@ canvas {
   display: flex;
   gap: 14px;
   z-index: 999;
+  pointer-events: auto;
 }
 
 .mobile-controls button,
